@@ -10,12 +10,6 @@
 
 @interface AMYLocalHostAPIClient : NSObject
 
-+ (void)getAllPlayersWithCompletion:(void (^)(NSArray *))completion;
-
-+ (void)getAllGamesWithCompletion:(void (^)(NSArray *))completion;
-
-+ (void)getAllTeamsWithCompletion:(void (^)(NSArray *))completion;
-
-+ (void)getTeamRosterWithCompletion:(void (^)(NSArray *))completion;
++ (void)getInfoFromRepositoryWithQuery:(NSString*)query completion:(void (^)(NSArray *))completion;
 
 @end

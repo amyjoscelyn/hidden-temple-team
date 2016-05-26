@@ -18,50 +18,41 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [AMYLocalHostAPIClient getAllPlayersWithCompletion:^(NSArray *players)
-     {
-         NSLog(@"%@", players);
-     }];
-    
-    [AMYLocalHostAPIClient getAllGamesWithCompletion:^(NSArray *games)
-     {
-         NSLog(@"%@", games);
-     }];
-    
-    [AMYLocalHostAPIClient getAllTeamsWithCompletion:^(NSArray *teams)
-     {
-         NSLog(@"%@", teams);
-     }];
-    
-    [AMYLocalHostAPIClient getTeamRosterWithCompletion:^(NSArray *roster)
-     {
-         NSLog(@"%@", roster);
-     }];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)allPlayersTapped:(id)sender
-{
+{    
+    NSString *query = @"players/all";
     
+    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *players) {
+        NSLog(@"%@", players);
+    }];
 }
 - (IBAction)allTeamsTapped:(id)sender
 {
+    NSString *query = @"teams/all";
     
+    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *players) {
+        NSLog(@"%@", players);
+    }];
 }
 
 - (IBAction)fullTeamRosterTapped:(id)sender
 {
+    NSString *query = @"roster/all";
     
+    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *players) {
+        NSLog(@"%@", players);
+    }];
 }
 
 - (IBAction)allGamesTapped:(id)sender
 {
+    NSString *query = @"games/all";
     
+    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *players) {
+        NSLog(@"%@", players);
+    }];
 }
 
 @end

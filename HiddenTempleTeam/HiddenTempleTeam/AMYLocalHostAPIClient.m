@@ -9,6 +9,12 @@
 #import "AMYLocalHostAPIClient.h"
 #import <AFNetworking.h>
 
+@interface AMYLocalHostAPIClient ()
+
+@property (nonatomic, strong) NSString *baseURL;
+
+@end
+
 @implementation AMYLocalHostAPIClient
 
 /*
@@ -19,71 +25,17 @@
  roster--id?id=, team?id=, player?id=, hiredate?date=, all
  */
 
-+ (void)getAllPlayersWithCompletion:(void (^)(NSArray *))completion
++ (void)getInfoFromRepositoryWithQuery:(NSString*)query completion:(void (^)(NSArray *))completion
 {
-    NSString *allPlayersURLString = [NSString stringWithFormat:@"http://localhost:8080/players/all"];
+    NSString *urlString = [NSString stringWithFormat:@"http://localhost:8080/%@", query];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    [manager GET:allPlayersURLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSArray *playersArray = responseObject;
         
         completion(playersArray);
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        //code for error
-        NSLog(@"ERROR: %@", error.localizedDescription);
-    }];
-}
-
-+ (void)getAllGamesWithCompletion:(void (^)(NSArray *))completion
-{
-    NSString *allPlayersURLString = [NSString stringWithFormat:@"http://localhost:8080/games/all"];
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    [manager GET:allPlayersURLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        NSArray *gamesArray = responseObject;
-        
-        completion(gamesArray);
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        //code for error
-        NSLog(@"ERROR: %@", error.localizedDescription);
-    }];
-}
-
-+ (void)getTeamRosterWithCompletion:(void (^)(NSArray *))completion
-{
-    NSString *allPlayersURLString = [NSString stringWithFormat:@"http://localhost:8080/roster/all"];
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    [manager GET:allPlayersURLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        NSArray *rosterArray = responseObject;
-        
-        completion(rosterArray);
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        //code for error
-        NSLog(@"ERROR: %@", error.localizedDescription);
-    }];
-}
-
-+ (void)getAllTeamsWithCompletion:(void (^)(NSArray *))completion
-{
-    NSString *allPlayersURLString = [NSString stringWithFormat:@"http://localhost:8080/teams/all"];
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    [manager GET:allPlayersURLString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        NSArray *teamsArray = responseObject;
-        
-        completion(teamsArray);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //code for error
