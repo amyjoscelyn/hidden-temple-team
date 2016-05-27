@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Team (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *teamID;
+@property (nullable, nonatomic, retain) NSString *teamID;
 @property (nullable, nonatomic, retain) NSString *teamName;
 @property (nullable, nonatomic, retain) NSSet<Player *> *players;
 @property (nullable, nonatomic, retain) NSSet<Game *> *games;

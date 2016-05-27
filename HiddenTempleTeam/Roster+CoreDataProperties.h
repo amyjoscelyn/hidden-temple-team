@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Roster (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *rosterID;
-@property (nullable, nonatomic, retain) NSNumber *teamID;
-@property (nullable, nonatomic, retain) NSNumber *playerID;
-@property (nullable, nonatomic, retain) NSDate *hireDate;
+@property (nullable, nonatomic, retain) NSString *rosterID;
+@property (nullable, nonatomic, retain) NSString *teamID;
+@property (nullable, nonatomic, retain) NSString *playerID;
+@property (nullable, nonatomic, retain) NSString *hireDate;
 @property (nullable, nonatomic, retain) NSSet<Player *> *players;
 @property (nullable, nonatomic, retain) NSSet<Team *> *teams;
 

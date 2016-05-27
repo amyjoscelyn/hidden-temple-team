@@ -15,12 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Game (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *gameID;
-@property (nullable, nonatomic, retain) NSNumber *homeTeam;
-@property (nullable, nonatomic, retain) NSNumber *awayTeam;
-@property (nullable, nonatomic, retain) NSNumber *homeScore;
-@property (nullable, nonatomic, retain) NSNumber *awayScore;
-@property (nullable, nonatomic, retain) NSDate *gameDate;
+@property (nullable, nonatomic, retain) NSString *gameID;
+@property (nullable, nonatomic, retain) NSString *homeTeam;
+@property (nullable, nonatomic, retain) NSString *awayTeam;
+@property (nullable, nonatomic, retain) NSString *homeScore;
+@property (nullable, nonatomic, retain) NSString *awayScore;
+@property (nullable, nonatomic, retain) NSString *gameDate;
 @property (nullable, nonatomic, retain) NSSet<Team *> *teams;
 
 @end

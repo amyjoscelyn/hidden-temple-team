@@ -8,10 +8,12 @@
 
 #import "AMYPlayersTableViewController.h"
 #import "AMYLocalHostAPIClient.h"
+#import "AMYSharedDataStore.h"
 
 @interface AMYPlayersTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *players;
+@property (nonatomic, strong) AMYSharedDataStore *dataStore;
 
 @end
 
@@ -21,16 +23,32 @@
 {
     [super viewDidLoad];
     
-    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:@"players/all" completion:^(NSArray *players)
+    self.dataStore = [AMYSharedDataStore sharedStoryDataStore];
+    
+//    self.dataStore.players;
+    
+//    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:@"players/all" completion:^(NSArray *players)
+//    {
+//        self.players = [players mutableCopy];
+//    }];
+    
+//    NSLog(@"players: %@", self.players);
+
+    for (NSInteger i = 0; i < 6; i++)
     {
-        self.players = [players mutableCopy];
-    }];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+        NSString *query = [NSString stringWithFormat:@"teams/id?id=%li", i+1];
+        
+//        [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *result) {
+//            
+//            NSDictionary *currentDictionary = result.firstObject;
+//
+//            NSLog(@"%@", currentDictionary);
+//            
+//            [self.players addObject:currentDictionary];
+//        }];
+    }
+    //okay so the issue here is that this is running in a block as soon as the view has loaded.  because of this, getting the count will be impossible without waiting for all of the time the block requires to finish just to get the count of objects in the array.
+    //so what I should try to do is set the objects beforehand, upon opening the app, into the datastore.  Then i can call upon the data store saved properties and find the count that way.  Or I should be able to, anyway.
 }
 
 #pragma mark - Table view data source
@@ -43,6 +61,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 //    return self.players.count;
+    
     return 5;
 }
 
