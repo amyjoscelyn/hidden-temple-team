@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D6A32391CF8880500659EFF /* Team+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A322A1CF8880500659EFF /* Team+CoreDataProperties.m */; };
+		3D6A323A1CF8880500659EFF /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A322C1CF8880500659EFF /* Team.m */; };
+		3D6A323B1CF8880500659EFF /* Game+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A322E1CF8880500659EFF /* Game+CoreDataProperties.m */; };
+		3D6A323C1CF8880500659EFF /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A32301CF8880500659EFF /* Game.m */; };
+		3D6A323D1CF8880500659EFF /* Player+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A32321CF8880500659EFF /* Player+CoreDataProperties.m */; };
+		3D6A323E1CF8880500659EFF /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A32341CF8880500659EFF /* Player.m */; };
+		3D6A323F1CF8880500659EFF /* Roster+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A32361CF8880500659EFF /* Roster+CoreDataProperties.m */; };
+		3D6A32401CF8880500659EFF /* Roster.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A32381CF8880500659EFF /* Roster.m */; };
+		3D6A32431CF888EF00659EFF /* AMYSharedDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A32421CF888EF00659EFF /* AMYSharedDataStore.m */; };
 		3D9C67EB1CF7C5270041AA0A /* AMYPlayersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C67EA1CF7C5270041AA0A /* AMYPlayersTableViewController.m */; };
 		3DDAEB551CF781A200E39AF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAEB541CF781A200E39AF5 /* main.m */; };
 		3DDAEB581CF781A200E39AF5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAEB571CF781A200E39AF5 /* AppDelegate.m */; };
@@ -40,6 +49,24 @@
 
 /* Begin PBXFileReference section */
 		31C32918F0E6CC76BBC68A40 /* Pods-HiddenTempleTeam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiddenTempleTeam.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiddenTempleTeam/Pods-HiddenTempleTeam.release.xcconfig"; sourceTree = "<group>"; };
+		3D6A32291CF8880500659EFF /* Team+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Team+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D6A322A1CF8880500659EFF /* Team+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Team+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D6A322B1CF8880500659EFF /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
+		3D6A322C1CF8880500659EFF /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
+		3D6A322D1CF8880500659EFF /* Game+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Game+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D6A322E1CF8880500659EFF /* Game+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Game+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D6A322F1CF8880500659EFF /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		3D6A32301CF8880500659EFF /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		3D6A32311CF8880500659EFF /* Player+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Player+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D6A32321CF8880500659EFF /* Player+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Player+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D6A32331CF8880500659EFF /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		3D6A32341CF8880500659EFF /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		3D6A32351CF8880500659EFF /* Roster+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Roster+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3D6A32361CF8880500659EFF /* Roster+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Roster+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3D6A32371CF8880500659EFF /* Roster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Roster.h; sourceTree = "<group>"; };
+		3D6A32381CF8880500659EFF /* Roster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Roster.m; sourceTree = "<group>"; };
+		3D6A32411CF888EF00659EFF /* AMYSharedDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYSharedDataStore.h; sourceTree = "<group>"; };
+		3D6A32421CF888EF00659EFF /* AMYSharedDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYSharedDataStore.m; sourceTree = "<group>"; };
 		3D9C67E91CF7C5270041AA0A /* AMYPlayersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYPlayersTableViewController.h; sourceTree = "<group>"; };
 		3D9C67EA1CF7C5270041AA0A /* AMYPlayersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYPlayersTableViewController.m; sourceTree = "<group>"; };
 		3DDAEB501CF781A200E39AF5 /* HiddenTempleTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiddenTempleTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +118,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D6A32281CF887E600659EFF /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				3D6A32291CF8880500659EFF /* Team+CoreDataProperties.h */,
+				3D6A322A1CF8880500659EFF /* Team+CoreDataProperties.m */,
+				3D6A322B1CF8880500659EFF /* Team.h */,
+				3D6A322C1CF8880500659EFF /* Team.m */,
+				3D6A322D1CF8880500659EFF /* Game+CoreDataProperties.h */,
+				3D6A322E1CF8880500659EFF /* Game+CoreDataProperties.m */,
+				3D6A322F1CF8880500659EFF /* Game.h */,
+				3D6A32301CF8880500659EFF /* Game.m */,
+				3D6A32311CF8880500659EFF /* Player+CoreDataProperties.h */,
+				3D6A32321CF8880500659EFF /* Player+CoreDataProperties.m */,
+				3D6A32331CF8880500659EFF /* Player.h */,
+				3D6A32341CF8880500659EFF /* Player.m */,
+				3D6A32351CF8880500659EFF /* Roster+CoreDataProperties.h */,
+				3D6A32361CF8880500659EFF /* Roster+CoreDataProperties.m */,
+				3D6A32371CF8880500659EFF /* Roster.h */,
+				3D6A32381CF8880500659EFF /* Roster.m */,
+			);
+			name = ManagedObjects;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		3DDAEB471CF781A200E39AF5 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +169,8 @@
 			children = (
 				3DDAEB561CF781A200E39AF5 /* AppDelegate.h */,
 				3DDAEB571CF781A200E39AF5 /* AppDelegate.m */,
+				3D6A32411CF888EF00659EFF /* AMYSharedDataStore.h */,
+				3D6A32421CF888EF00659EFF /* AMYSharedDataStore.m */,
 				3DDAEB891CF7837F00E39AF5 /* AMYLocalHostAPIClient.h */,
 				3DDAEB8A1CF7837F00E39AF5 /* AMYLocalHostAPIClient.m */,
 				3DDAEB591CF781A200E39AF5 /* ViewController.h */,
@@ -129,6 +182,7 @@
 				3DDAEB641CF781A200E39AF5 /* LaunchScreen.storyboard */,
 				3DDAEB671CF781A200E39AF5 /* Info.plist */,
 				3DDAEB5F1CF781A200E39AF5 /* HiddenTempleTeam.xcdatamodeld */,
+				3D6A32281CF887E600659EFF /* ManagedObjects */,
 				3DDAEB531CF781A200E39AF5 /* Supporting Files */,
 			);
 			path = HiddenTempleTeam;
@@ -358,12 +412,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6A32401CF8880500659EFF /* Roster.m in Sources */,
+				3D6A323B1CF8880500659EFF /* Game+CoreDataProperties.m in Sources */,
+				3D6A323A1CF8880500659EFF /* Team.m in Sources */,
 				3DDAEB5B1CF781A200E39AF5 /* ViewController.m in Sources */,
 				3DDAEB581CF781A200E39AF5 /* AppDelegate.m in Sources */,
+				3D6A323E1CF8880500659EFF /* Player.m in Sources */,
 				3D9C67EB1CF7C5270041AA0A /* AMYPlayersTableViewController.m in Sources */,
+				3D6A323C1CF8880500659EFF /* Game.m in Sources */,
 				3DDAEB551CF781A200E39AF5 /* main.m in Sources */,
+				3D6A32431CF888EF00659EFF /* AMYSharedDataStore.m in Sources */,
+				3D6A323D1CF8880500659EFF /* Player+CoreDataProperties.m in Sources */,
+				3D6A32391CF8880500659EFF /* Team+CoreDataProperties.m in Sources */,
 				3DDAEB8B1CF7837F00E39AF5 /* AMYLocalHostAPIClient.m in Sources */,
 				3DDAEB611CF781A200E39AF5 /* HiddenTempleTeam.xcdatamodeld in Sources */,
+				3D6A323F1CF8880500659EFF /* Roster+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
