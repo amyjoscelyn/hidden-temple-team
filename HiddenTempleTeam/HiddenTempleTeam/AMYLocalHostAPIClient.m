@@ -59,9 +59,9 @@
     
     [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        NSArray *playersArray = responseObject;
+        NSArray *resultArray = responseObject;
         
-        completion(playersArray);
+        completion(resultArray);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //code for error

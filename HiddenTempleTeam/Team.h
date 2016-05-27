@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "AMYLocalHostAPIClient.h"
 
 @class Game, Player, Roster;
 
@@ -15,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Team : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
++ (Team *)createTeamFromQueryResult:(NSArray *)queryResult managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 @end
 

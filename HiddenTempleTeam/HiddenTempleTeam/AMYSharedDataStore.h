@@ -15,8 +15,21 @@
 
 @interface AMYSharedDataStore : NSObject
 
+@property (strong, nonatomic, readonly) NSArray *players;
+@property (strong, nonatomic, readonly) NSArray *teams;
+@property (strong, nonatomic, readonly) NSArray *games;
+@property (strong, nonatomic, readonly) Roster *roster;
+
+//@property (strong, nonatomic, readonly) NSSortDescriptor *sortByIDAsc;
+
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
++ (instancetype)sharedStoryDataStore;
+
+- (void)fetchData;
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 
 @end

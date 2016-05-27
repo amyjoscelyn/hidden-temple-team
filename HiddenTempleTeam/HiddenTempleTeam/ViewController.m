@@ -55,16 +55,16 @@
 {    
     NSString *query = @"players/all";
     
-    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *players) {
-        NSLog(@"%@", players);
+    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *result) {
+        NSLog(@"%@", result);
     }];
 }
 - (IBAction)allTeamsTapped:(id)sender
 {
     NSString *query = @"teams/all";
     
-    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *players) {
-        NSLog(@"%@", players);
+    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *result) {
+        NSLog(@"%@", result);
     }];
 }
 
@@ -72,8 +72,8 @@
 {
     NSString *query = @"roster/all";
     
-    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *players) {
-        NSLog(@"%@", players);
+    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *result) {
+        NSLog(@"%@", result);
     }];
 }
 
@@ -81,8 +81,8 @@
 {
     NSString *query = @"games/all";
     
-    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *players) {
-        NSLog(@"%@", players);
+    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *result) {
+        NSLog(@"%@", result);
     }];
 }
 
