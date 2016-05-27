@@ -42,17 +42,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.players.count;
+//    return self.players.count;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"playerRow" forIndexPath:indexPath];
     
-//    for (<#type *object#> in self.players)
-//    {
-//        <#statements#>
-//    }
+    NSInteger row = indexPath.row;
+    
+    NSDictionary *player = self.players[row];
+    
+    NSString *playerID = player[@"playerID"];
+    
+//    cell.textLabel.text = playerID;
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"table row: %li", row];
+    
+        //birthdate=0
+        //firstname=1
+        //lastname=2
+        //id=3
     
     return cell;
 }

@@ -43,12 +43,6 @@
  @"roster/team?id="
  @"roster/player?id="
  @"roster/hiredate?date="
- 
- I STARTED WORKING 5/26/16 AT 6:07p TONIGHT!!!!!!!!!
- I ENDED WORKING AT 6:37.  That's half an hour--fifteen minutes to go!
- 
- Starting again at 7:53p (to end between 8:03 and 8:08!)
- Let's just call it a day.  45 minutes!
  */
 
 + (void)getInfoFromRepositoryWithQuery:(NSString*)query completion:(void (^)(NSArray *))completion
@@ -60,6 +54,14 @@
     [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSArray *resultArray = responseObject;
+        
+        /*
+         maybe what I need to do here is like in Outside, where I use the responseObject to init a custom class object.  You know, set the properties here.  Maybe.
+         
+         So if I had a custom class for each table... I should be able to set the properties.  Of course, with my ability to make specific API calls, I can.  But also, I don't want to make to many calls.  So it would be best if I could just get the list of /all for each table, put them in a table, and then maybe when I go to the detail view, I can do a separate query for that id based on the row # selected.
+         
+         But I can't get a single entry until I can NSLog the dictionary outside of the block.
+         */
         
         completion(resultArray);
         

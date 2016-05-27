@@ -49,6 +49,25 @@
      
      Sounds great to me!
      */
+//    NSMutableArray *teams = [NSMutableArray new];
+    
+    for (NSInteger i = 0; i < 6; i++)
+    {
+        NSString *query = [NSString stringWithFormat:@"teams/id?id=%li", i+1];
+        
+        [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *result) {
+            
+            NSDictionary *currentDictionary = result.firstObject;
+            
+//            NSString *teamName = result[0][@"teamName"];
+            
+//            [teams addObject:currentDictionary];
+            
+//            NSLog(@"%@", result);
+            NSLog(@"%@", currentDictionary);
+        }];
+    }
+//    NSLog(@"%@", teams);
 }
 
 - (IBAction)allPlayersTapped:(id)sender
