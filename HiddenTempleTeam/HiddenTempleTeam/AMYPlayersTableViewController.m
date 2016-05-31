@@ -62,6 +62,13 @@
     }
     //okay so the issue here is that this is running in a block as soon as the view has loaded.  because of this, getting the count will be impossible without waiting for all of the time the block requires to finish just to get the count of objects in the array.
     //so what I should try to do is set the objects beforehand, upon opening the app, into the datastore.  Then i can call upon the data store saved properties and find the count that way.  Or I should be able to, anyway.
+    //NEXT STEPS: (haha NS)
+    /*
+     Work on the generate entity methods in SharedDataStore to populate attributes with data.  By the time I'm ready to see the views, the data should all be there.
+     Use the sharedDataStore property on the VCs to generate the NSLogs.
+     Once it's able to log, I should be able to get it onto the table cells.
+     From there I can advance to more queries.
+     */
 }
 
 #pragma mark - Table view data source
