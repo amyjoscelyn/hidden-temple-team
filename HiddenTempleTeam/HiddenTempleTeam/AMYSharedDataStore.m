@@ -7,6 +7,8 @@
 //
 
 #import "AMYSharedDataStore.h"
+#import "AMYLocalHostAPIClient.h"
+#import "AMYHiddenTempleRepository.h"
 
 @interface AMYSharedDataStore ()
 
@@ -38,8 +40,31 @@
     if (self)
     {
 //        _sortByIDAsc = [NSSortDescriptor sortDescriptorWithKey:@"storyID" ascending:YES];
+        _repositories=[NSMutableArray new];
     }
     return self;
+}
+
+#pragma API Request Test
+
+- (void)getPlayerRepositoriesWithCompletion:(void (^)(BOOL))completionBlock
+{
+    //this is the first method called
+    NSLog(@"INSIDE DATA STORE - 1");
+    NSString *query = @"players/all";
+    
+    [AMYLocalHostAPIClient getRepositoryWithQuery:query completion:^(NSArray *repoDictionaries)
+     {
+         //this method gets called fourth
+         NSLog(@"INSIDE DS METHOD  - 4");
+         for (NSDictionary *repoDictionary in repoDictionaries)
+         {
+             //this gets called immediately for each dictionary in the loop, pt 1
+             NSLog(@"INSIDE DS BLOCK  - #");
+             [self.repositories addObject:[AMYHiddenTempleRepository repoFromDictionary:repoDictionary]];
+         }
+         completionBlock(YES);
+     }];
 }
 
 #pragma mark - Fetch Requests

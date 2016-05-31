@@ -10,6 +10,6 @@
 
 @interface AMYLocalHostAPIClient : NSObject
 
-+ (void)getInfoFromRepositoryWithQuery:(NSString*)query completion:(void (^)(NSArray *))completion;
++ (void)getRepositoryWithQuery:(NSString *)query completion:(void (^)(NSArray *))completion;
 
 @end

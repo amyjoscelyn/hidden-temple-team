@@ -18,7 +18,7 @@
     
     NSString *query = @"teams/all";
     
-    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *result) {
+    [AMYLocalHostAPIClient getRepositoryWithQuery:query completion:^(NSArray *result) {
         NSLog(@"%@", result);
         //This particular result is an array of six dictionaries.  How did I do this in my other project?
     }];

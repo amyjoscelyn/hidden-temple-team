@@ -15,6 +15,8 @@
 
 @interface AMYSharedDataStore : NSObject
 
+@property (strong, nonatomic) NSMutableArray *repositories;
+
 @property (strong, nonatomic, readonly) NSArray *players;
 @property (strong, nonatomic, readonly) NSArray *teams;
 @property (strong, nonatomic, readonly) NSArray *games;
@@ -31,5 +33,7 @@
 - (void)fetchData;
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+- (void)getPlayerRepositoriesWithCompletion:(void (^)(BOOL))completionBlock;
 
 @end
