@@ -25,19 +25,6 @@
     
     self.dataStore = [AMYSharedDataStore sharedStoryDataStore];
     
-    self.tableView.accessibilityLabel=@"Hidden Temple Table View";
-    self.tableView.accessibilityIdentifier=@"Hidden Temple Table View";
-    
-    self.tableView.accessibilityIdentifier = @"Hidden Temple Table View";
-    self.tableView.accessibilityLabel=@"Hidden Temple Table View";
-    
-    [self.dataStore getPlayerRepositoriesWithCompletion:^(BOOL success)
-     {
-         //this is last in the line up
-         NSLog(@"INSIDE TABLE VC   - 5");
-         [self.tableView reloadData];
-     }];
-    
 //    self.dataStore.players;
     
 //    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:@"players/all" completion:^(NSArray *players)
