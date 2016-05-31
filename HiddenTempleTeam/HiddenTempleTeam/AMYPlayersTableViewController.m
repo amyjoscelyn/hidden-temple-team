@@ -27,33 +27,13 @@
     
     [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:@"players/all" completion:^(NSArray *players)
     {
+//        NSSortDescriptor *sortByIDAsc = [NSSortDescriptor sortDescriptorWithKey:@"playerID" ascending:YES];
+//        NSArray *sortedPlayers = [players sortedArrayUsingSelector:sortByIDAsc];
+        
         self.players = [players mutableCopy];
         [self.tableView reloadData];
         NSLog(@"players: %@", self.players);
     }];
-
-//    for (NSInteger i = 0; i < 6; i++)
-//    {
-//        NSString *query = [NSString stringWithFormat:@"teams/id?id=%li", i+1];
-    
-//        [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:query completion:^(NSArray *result) {
-//            
-//            NSDictionary *currentDictionary = result.firstObject;
-//
-//            NSLog(@"%@", currentDictionary);
-//            
-//            [self.players addObject:currentDictionary];
-//        }];
-//    }
-    //okay so the issue here is that this is running in a block as soon as the view has loaded.  because of this, getting the count will be impossible without waiting for all of the time the block requires to finish just to get the count of objects in the array.
-    //so what I should try to do is set the objects beforehand, upon opening the app, into the datastore.  Then i can call upon the data store saved properties and find the count that way.  Or I should be able to, anyway.
-    //NEXT STEPS: (haha NS)
-    /*
-     Work on the generate entity methods in SharedDataStore to populate attributes with data.  By the time I'm ready to see the views, the data should all be there.
-     Use the sharedDataStore property on the VCs to generate the NSLogs.
-     Once it's able to log, I should be able to get it onto the table cells.
-     From there I can advance to more queries.
-     */
 }
 
 #pragma mark - Table view data source
@@ -77,20 +57,12 @@
     NSDictionary *player = self.players[row];
     
     NSString *playerID = player[@"playerID"];
-    NSLog(@"playerID: %@", playerID);
-    
     NSString *firstName = player[@"firstName"];
     NSString *lastName = player[@"lastName"];
     NSString *fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
     
     cell.textLabel.text = fullName;
-    
     cell.detailTextLabel.text = [NSString stringWithFormat:@"#%@", playerID];
-    
-        //birthdate=0
-        //firstname=1
-        //lastname=2
-        //id=3
     
     return cell;
 }
