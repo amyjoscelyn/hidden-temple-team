@@ -77,14 +77,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="uEy-vo-tDV"/>
-                        <segue destination="6Fk-Dx-Blm" kind="relationship" relationship="viewControllers" id="SgD-7C-Zij"/>
+                        <segue destination="fU8-aN-RrM" kind="relationship" relationship="viewControllers" id="SgD-7C-Zij"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IqS-O5-tJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="243" y="312"/>
         </scene>
-        <!--Players-->
+        <!--Players Table View Controller-->
         <scene sceneID="osC-GO-Gma">
             <objects>
                 <tableViewController id="6Fk-Dx-Blm" customClass="AMYPlayersTableViewController" sceneMemberID="viewController">
@@ -94,7 +94,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerRow" textLabel="KaG-1z-wl8" detailTextLabel="gGX-oq-Seb" style="IBUITableViewCellStyleValue1" id="4Xd-Th-JWj">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Xd-Th-JWj" id="YsR-cc-fRo">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -116,6 +116,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cgs-nY-Lot" kind="show" id="AIc-b5-lvJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -123,9 +126,70 @@
                             <outlet property="delegate" destination="6Fk-Dx-Blm" id="Ghd-vw-wGL"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Players" id="pvX-7I-0q8"/>
+                    <navigationItem key="navigationItem" id="gvo-Fv-zRP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VWb-4h-M2Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="1110"/>
+        </scene>
+        <!--Player Detail View Controller-->
+        <scene sceneID="qGj-XI-nzR">
+            <objects>
+                <viewController id="cgs-nY-Lot" customClass="AMYPlayerDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bgP-pY-JNl"/>
+                        <viewControllerLayoutGuide type="bottom" id="B7g-nn-PV6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jab-Fl-bYa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlayerName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka0-jV-9xi">
+                                <rect key="frame" x="214" y="90" width="171.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5j-Uo-VhO">
+                                <rect key="frame" x="287" y="144.5" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ka0-jV-9xi" firstAttribute="centerX" secondItem="jab-Fl-bYa" secondAttribute="centerX" id="1oj-h2-tcb"/>
+                            <constraint firstItem="v5j-Uo-VhO" firstAttribute="top" secondItem="ka0-jV-9xi" secondAttribute="bottom" constant="16" id="SMz-Uk-DD1"/>
+                            <constraint firstItem="v5j-Uo-VhO" firstAttribute="centerX" secondItem="ka0-jV-9xi" secondAttribute="centerX" id="aR1-ew-5SF"/>
+                            <constraint firstItem="ka0-jV-9xi" firstAttribute="top" secondItem="bgP-pY-JNl" secondAttribute="bottom" constant="70" id="dEO-LP-Bue"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerIDLabel" destination="v5j-Uo-VhO" id="cQD-GC-BwM"/>
+                        <outlet property="playerNameLabel" destination="ka0-jV-9xi" id="GNl-5T-Zxh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Q3-CR-5Ho" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1867" y="1110"/>
+        </scene>
+        <!--Players-->
+        <scene sceneID="WTD-Xm-hSj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fU8-aN-RrM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Players" id="pvX-7I-0q8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4qH-NR-VX9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Fk-Dx-Blm" kind="relationship" relationship="rootViewController" id="l5R-5I-6hM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MCZ-tE-5BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="243" y="1110"/>
         </scene>
