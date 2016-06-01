@@ -70,10 +70,6 @@
 
 #pragma mark - Navigation
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     AMYPlayerDetailViewController *playerDestinationVC = segue.destinationViewController;
@@ -82,7 +78,6 @@
     NSInteger row = indexPath.row;
     
     playerDestinationVC.player = self.players[row];
-//    [playerDestinationVC setPlayer:self.players[row]];
 }
 
 @end

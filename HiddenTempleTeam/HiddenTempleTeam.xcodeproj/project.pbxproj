@@ -10,6 +10,8 @@
 		3D4F622B1CFE1DE100E289CB /* AMYPlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4F622A1CFE1DE100E289CB /* AMYPlayerDetailViewController.m */; };
 		3D4F622E1CFF1DED00E289CB /* AMYTeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4F622D1CFF1DED00E289CB /* AMYTeamsTableViewController.m */; };
 		3D4F62311CFF2B6200E289CB /* AMYTeamDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4F62301CFF2B6200E289CB /* AMYTeamDetailViewController.m */; };
+		3D4F62341CFF5E7800E289CB /* AMYGamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4F62331CFF5E7800E289CB /* AMYGamesTableViewController.m */; };
+		3D4F62371CFF647B00E289CB /* AMYGameDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4F62361CFF647B00E289CB /* AMYGameDetailViewController.m */; };
 		3D6A32391CF8880500659EFF /* Team+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A322A1CF8880500659EFF /* Team+CoreDataProperties.m */; };
 		3D6A323A1CF8880500659EFF /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A322C1CF8880500659EFF /* Team.m */; };
 		3D6A323B1CF8880500659EFF /* Game+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6A322E1CF8880500659EFF /* Game+CoreDataProperties.m */; };
@@ -58,6 +60,10 @@
 		3D4F622D1CFF1DED00E289CB /* AMYTeamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYTeamsTableViewController.m; sourceTree = "<group>"; };
 		3D4F622F1CFF2B6200E289CB /* AMYTeamDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYTeamDetailViewController.h; sourceTree = "<group>"; };
 		3D4F62301CFF2B6200E289CB /* AMYTeamDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYTeamDetailViewController.m; sourceTree = "<group>"; };
+		3D4F62321CFF5E7800E289CB /* AMYGamesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYGamesTableViewController.h; sourceTree = "<group>"; };
+		3D4F62331CFF5E7800E289CB /* AMYGamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYGamesTableViewController.m; sourceTree = "<group>"; };
+		3D4F62351CFF647B00E289CB /* AMYGameDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYGameDetailViewController.h; sourceTree = "<group>"; };
+		3D4F62361CFF647B00E289CB /* AMYGameDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYGameDetailViewController.m; sourceTree = "<group>"; };
 		3D6A32291CF8880500659EFF /* Team+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Team+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3D6A322A1CF8880500659EFF /* Team+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Team+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3D6A322B1CF8880500659EFF /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
@@ -192,6 +198,10 @@
 				3D4F622D1CFF1DED00E289CB /* AMYTeamsTableViewController.m */,
 				3D4F622F1CFF2B6200E289CB /* AMYTeamDetailViewController.h */,
 				3D4F62301CFF2B6200E289CB /* AMYTeamDetailViewController.m */,
+				3D4F62321CFF5E7800E289CB /* AMYGamesTableViewController.h */,
+				3D4F62331CFF5E7800E289CB /* AMYGamesTableViewController.m */,
+				3D4F62351CFF647B00E289CB /* AMYGameDetailViewController.h */,
+				3D4F62361CFF647B00E289CB /* AMYGameDetailViewController.m */,
 				3DDAEB5C1CF781A200E39AF5 /* Main.storyboard */,
 				3DDAEB621CF781A200E39AF5 /* Assets.xcassets */,
 				3DDAEB641CF781A200E39AF5 /* LaunchScreen.storyboard */,
@@ -434,11 +444,13 @@
 				3D6A323A1CF8880500659EFF /* Team.m in Sources */,
 				3DDAEB5B1CF781A200E39AF5 /* ViewController.m in Sources */,
 				3DDAEB581CF781A200E39AF5 /* AppDelegate.m in Sources */,
+				3D4F62371CFF647B00E289CB /* AMYGameDetailViewController.m in Sources */,
 				3D6A323E1CF8880500659EFF /* Player.m in Sources */,
 				3D9C67EB1CF7C5270041AA0A /* AMYPlayersTableViewController.m in Sources */,
 				3D6A323C1CF8880500659EFF /* Game.m in Sources */,
 				3DDAEB551CF781A200E39AF5 /* main.m in Sources */,
 				3D6A32431CF888EF00659EFF /* AMYSharedDataStore.m in Sources */,
+				3D4F62341CFF5E7800E289CB /* AMYGamesTableViewController.m in Sources */,
 				3D6A323D1CF8880500659EFF /* Player+CoreDataProperties.m in Sources */,
 				3D6A32391CF8880500659EFF /* Team+CoreDataProperties.m in Sources */,
 				3DDAEB8B1CF7837F00E39AF5 /* AMYLocalHostAPIClient.m in Sources */,

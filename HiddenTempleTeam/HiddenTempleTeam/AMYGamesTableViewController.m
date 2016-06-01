@@ -1,27 +1,29 @@
 //
-//  AMYTeamsTableViewController.m
+//  AMYGamesTableViewController.m
 //  HiddenTempleTeam
 //
 //  Created by Amy Joscelyn on 6/1/16.
 //  Copyright © 2016 Amy Joscelyn. All rights reserved.
 //
 
-#import "AMYTeamsTableViewController.h"
-#import "AMYTeamDetailViewController.h"
+#import "AMYGamesTableViewController.h"
+#import "AMYGameDetailViewController.h"
 #import "AMYLocalHostAPIClient.h"
 #import "AMYSharedDataStore.h"
 
-@interface AMYTeamsTableViewController ()
+@interface AMYGamesTableViewController ()
 
-@property (nonatomic, strong) NSMutableArray *teams;
+@property (nonatomic, strong) NSMutableArray *games;
 @property (nonatomic, strong) AMYSharedDataStore *dataStore;
 
 @end
 
-@implementation AMYTeamsTableViewController
+@implementation AMYGamesTableViewController
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
     /*
      =======================================================
            THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
@@ -31,15 +33,13 @@
     
     self.dataStore = [AMYSharedDataStore sharedStoryDataStore];
     
-    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:@"teams/all" completion:^(NSArray *teams)
-     {         
-         self.teams = [teams mutableCopy];
+    [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:@"games/all" completion:^(NSArray *games)
+     {
+         self.games = [games mutableCopy];
          [self.tableView reloadData];
-         NSLog(@"teams: %@", self.teams);
+         NSLog(@"teams: %@", self.games);
      }];
 }
-
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -48,13 +48,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
-    //    return self.teams.count;
+    return 8;
+    //    return self.games.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"teamRow" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"gameRow" forIndexPath:indexPath];
     
     NSInteger row = indexPath.row;
     cell.textLabel.text = [NSString stringWithFormat:@"team # %li", row];
@@ -65,13 +65,14 @@
      =======================================================
      *-/
     
-    NSDictionary *team = self.teams[row];
+    NSDictionary *game = self.games[row];
     
-    NSString *teamID = team[@"teamID"];
-    NSString *teamName = team[@"teamName"];
+    NSString *gameID = game[@"id"];
+    NSString *homeTeam = game[@"id"];
+    NSString *awayTeam = game[@"id"];
     
-    cell.textLabel.text = teamName;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"#%@", teamID];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ vs. %@", homeTeam, awayTeam];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", gameID];
     
     */
     
@@ -85,15 +86,15 @@
  */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    AMYTeamDetailViewController *teamDestinationVC = segue.destinationViewController;
+    AMYGameDetailViewController *gameDestinationVC = segue.destinationViewController;
     
     NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
     NSInteger row = indexPath.row;
     
-    teamDestinationVC.team = self.teams[row];
+    gameDestinationVC.game = self.games[row];
     
     //temp!!!!!!!!!!!
-    teamDestinationVC.tempID = row;
+    gameDestinationVC.tempID = row;
 }
 
 @end
