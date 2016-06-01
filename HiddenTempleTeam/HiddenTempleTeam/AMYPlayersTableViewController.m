@@ -82,6 +82,7 @@
     NSInteger row = indexPath.row;
     
     playerDestinationVC.player = self.players[row];
+//    [playerDestinationVC setPlayer:self.players[row]];
 }
 
 @end

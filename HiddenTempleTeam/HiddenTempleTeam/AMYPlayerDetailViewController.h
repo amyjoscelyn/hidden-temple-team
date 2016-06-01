@@ -10,6 +10,6 @@
 
 @interface AMYPlayerDetailViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *player;
+@property (nonatomic, strong) NSDictionary *player;
 
 @end
