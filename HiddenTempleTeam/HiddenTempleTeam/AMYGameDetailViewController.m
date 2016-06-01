@@ -57,7 +57,7 @@
     
     [self determineWinner];
     
-    /*     
+    /*
      That's for games that have already been played, which is the only data I have right now
      
      Games that have not yet been played can have similar info, either left blank or just the basic team v. team
