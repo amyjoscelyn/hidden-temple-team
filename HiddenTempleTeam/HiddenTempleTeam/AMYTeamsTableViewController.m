@@ -61,7 +61,7 @@
     
     /*
      =======================================================
-     THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
+           THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
      =======================================================
      *-/
     
@@ -80,7 +80,7 @@
 
 /*
  =======================================================
- THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
+       THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
  =======================================================
  */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -91,6 +91,9 @@
     NSInteger row = indexPath.row;
     
     teamDestinationVC.team = self.teams[row];
+    
+    //temp!!!!!!!!!!!
+    teamDestinationVC.tempID = row;
 }
 
 @end
