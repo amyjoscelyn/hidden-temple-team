@@ -40,7 +40,7 @@
     self.birthdate = [formatter stringFromDate:date];
     
     self.playerNameLabel.text = [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
-    self.playerIDLabel.text = [NSString stringWithFormat:@"%@", self.playerID];
+    self.playerIDLabel.text = [NSString stringWithFormat:@"#%@", self.playerID];
     self.birthdateLabel.text = [NSString stringWithFormat:@"birthdate: %@", self.birthdate];
     
     //I want too to have a table within this view holding the teams (and dates hired) that player has been on, that when selected will segue to the appropriate team detail view.  I just need the team detail view first...

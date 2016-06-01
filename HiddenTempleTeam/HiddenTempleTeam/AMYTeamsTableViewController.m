@@ -7,6 +7,7 @@
 //
 
 #import "AMYTeamsTableViewController.h"
+#import "AMYTeamDetailViewController.h"
 #import "AMYLocalHostAPIClient.h"
 #import "AMYSharedDataStore.h"
 
@@ -81,16 +82,15 @@
  =======================================================
  THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
  =======================================================
- *-/
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    AMYPlayerDetailViewController *playerDestinationVC = segue.destinationViewController;
+    AMYTeamDetailViewController *teamDestinationVC = segue.destinationViewController;
     
     NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
     NSInteger row = indexPath.row;
     
-    playerDestinationVC.player = self.players[row];
-    //    [playerDestinationVC setPlayer:self.players[row]];
+    teamDestinationVC.team = self.teams[row];
 }
-*/
+
 @end

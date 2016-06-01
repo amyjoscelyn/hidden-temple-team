@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -98,6 +99,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mqb-w3-Q5h" kind="show" id="9Os-ZC-ZdW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -110,6 +114,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEC-Tl-gTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1055" y="-510"/>
+        </scene>
+        <!--Team Detail View Controller-->
+        <scene sceneID="9PQ-uc-gjD">
+            <objects>
+                <viewController id="mqb-w3-Q5h" customClass="AMYTeamDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qko-cC-5ZK"/>
+                        <viewControllerLayoutGuide type="bottom" id="rCm-jM-QlR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jgx-a8-KEW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="T85-RK-9iu">
+                                <rect key="frame" x="62" y="112" width="298" height="120"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YgE-Ly-wYi">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="025-0S-ahu"/>
+                                            <constraint firstAttribute="width" secondItem="YgE-Ly-wYi" secondAttribute="height" multiplier="1:1" id="t5M-Nz-l2Y"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="D7A-Yu-hmw">
+                                        <rect key="frame" x="128" y="23" width="170" height="75"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyM-Jh-uX4">
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMo-Uq-ZVF">
+                                                <rect key="frame" x="73" y="55" width="25" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T85-RK-9iu" firstAttribute="centerX" secondItem="jgx-a8-KEW" secondAttribute="centerX" id="Fdz-Zv-RNZ"/>
+                            <constraint firstItem="T85-RK-9iu" firstAttribute="top" secondItem="qko-cC-5ZK" secondAttribute="bottom" constant="48" id="eg9-mv-YTC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="teamIDLabel" destination="yMo-Uq-ZVF" id="ztl-GQ-D7m"/>
+                        <outlet property="teamImage" destination="YgE-Ly-wYi" id="uoz-YI-qed"/>
+                        <outlet property="teamNameLabel" destination="EyM-Jh-uX4" id="SNl-0X-EVV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="82f-nI-0z9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1867" y="-510"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oTq-s3-2UH">
