@@ -80,6 +80,15 @@
         self.teamImage.image = [UIImage imageNamed:@"Silver_Snakes"];
     }
     
+    /*
+     background colors:
+     #FFFD38 daffodil, color of yellow of animals
+     
+     Maybe I can have a different, darker shade of each of the animals, a red/blue/orange/yellow/green/silver to complement each team.  Or maybe there should be a single, common color for the background and each of those darker shades can be the text colors?
+     
+     Maybe if I distilled a color from the Legend legend for the common background?  Or that can at least be the background for each player?  Or should players have a different background based on the team they're currently on?
+     */
+    
     //*****Images from Nickelodeon Wiki for 'Legends of the Hidden Temple' ( http://nickelodeon.wikia.com/wiki/Legends_of_the_Hidden_Temple )*********************
 }
 
