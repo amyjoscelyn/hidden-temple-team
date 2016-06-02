@@ -70,6 +70,9 @@
      Games that have not yet been played can have similar info, either left blank or just the basic team v. team
      
      Right now I only have the ids.  I feel like in order to get the names of the teams based on the ids (and all that other INNER JOIN info) I need to do it in Spring.  For now I'll just use the ids.
+     
+     It would be neat to have a gradient for the background of the games as well--those that have been played can have the winning team color on the bottom, with the yellow brown or whatever on top
+     Games not yet played or tied can be the yellow to brown gradient of the background of the teams.
      */
 }
 
@@ -125,7 +128,7 @@
 {
     NSInteger homeScore = self.homeTeamScore.integerValue;
     NSInteger awayScore = self.awayTeamScore.integerValue;
-    NSLog(@"%li to %li", homeScore, awayScore);
+//    NSLog(@"%li to %li", homeScore, awayScore);
     
     if (homeScore < awayScore)
     {
