@@ -7,6 +7,7 @@
 //
 
 #import "AMYGameDetailViewController.h"
+#import "CAGradientLayer+Gradients.h"
 
 @interface AMYGameDetailViewController ()
 
@@ -16,6 +17,9 @@
 @property (nonatomic, strong) NSString *awayTeamID;
 @property (nonatomic, strong) NSString *homeTeamScore;
 @property (nonatomic, strong) NSString *awayTeamScore;
+
+@property (nonatomic, strong) NSString *winnerID;
+@property (nonatomic, strong) CAGradientLayer *gradientLayer;
 
 @property (weak, nonatomic) IBOutlet UILabel *gameHeaderLabel;
 
@@ -31,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIView *scoreView;
 @property (weak, nonatomic) IBOutlet UIImageView *homeTeamImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *awayTeamImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *winningTeamImageView;
 
 @end
 
@@ -54,15 +59,10 @@
     self.homeTeamScoreLabel.text = [NSString stringWithFormat:@"%@", self.homeTeamScore];
     self.awayTeamScoreLabel.text = [NSString stringWithFormat:@"%@", self.awayTeamScore];
     
-    [self displayImage:self.homeTeamImageView forTeam:self.homeTeamID];
-    [self displayImage:self.awayTeamImageView forTeam:self.awayTeamID];
-    
-    self.homeTeamImageView.layer.borderWidth = 2;
-    self.homeTeamImageView.layer.borderColor = [UIColor brownColor].CGColor;
-    self.awayTeamImageView.layer.borderWidth = 2;
-    self.awayTeamImageView.layer.borderColor = [UIColor brownColor].CGColor;
-    
+    self.scoreView.backgroundColor = [UIColor colorWithRed:255/255.0 green:0255/255.0 blue:0255/255.0 alpha:0.22];
     [self determineWinner];
+    [self setUpTeamImages];
+    [self setBackgroundColor];
     
     /*
      That's for games that have already been played, which is the only data I have right now
@@ -86,6 +86,20 @@
     [formatter setDateFormat:@"MM/dd/yyyy"];
     
     self.gameDate = [formatter stringFromDate:date];
+}
+
+- (void)setUpTeamImages
+{
+    [self displayImage:self.homeTeamImageView forTeam:self.homeTeamID];
+    [self displayImage:self.awayTeamImageView forTeam:self.awayTeamID];
+    [self displayImage:self.winningTeamImageView forTeam:self.winnerID];
+    
+    self.homeTeamImageView.layer.borderWidth = 2;
+    self.homeTeamImageView.layer.borderColor = [UIColor brownColor].CGColor;
+    self.awayTeamImageView.layer.borderWidth = 2;
+    self.awayTeamImageView.layer.borderColor = [UIColor brownColor].CGColor;
+    self.winningTeamImageView.layer.borderWidth = 2;
+    self.winningTeamImageView.layer.borderColor = [UIColor brownColor].CGColor;
 }
 
 - (void)displayImage:(UIImageView *)image forTeam:(NSString *)teamID
@@ -122,30 +136,45 @@
         //team is Silver Snakes
         image.image = [UIImage imageNamed:@"Silver_Snakes"];
     }
+    else
+    {
+        //use main image
+        image.image = [UIImage imageNamed:@"LotHT Legend"];
+    }
+}
+
+- (void)setBackgroundColor
+{
+    self.gradientLayer = [CAGradientLayer brownToYellowGradient];
+    self.gradientLayer.frame = self.view.frame;
+    [self.view.layer insertSublayer:self.gradientLayer atIndex:0];
 }
 
 - (void)determineWinner
 {
     NSInteger homeScore = self.homeTeamScore.integerValue;
     NSInteger awayScore = self.awayTeamScore.integerValue;
-//    NSLog(@"%li to %li", homeScore, awayScore);
     
     if (homeScore < awayScore)
     {
         //away wins!
-        self.awayView.backgroundColor = [UIColor colorWithRed:128/255.0 green:64/255.0 blue:32/255.0 alpha:0.5];
+//        self.awayView.backgroundColor = [UIColor colorWithRed:128/255.0 green:64/255.0 blue:32/255.0 alpha:0.5];
+        self.awayView.backgroundColor = [UIColor colorWithRed:255/255.0 green:0255/255.0 blue:0255/255.0 alpha:0.16];
         self.gameResultLabel.text = [NSString stringWithFormat:@"#%@ won this game!", self.awayTeamID];
+        self.winnerID = self.awayTeamID;
     }
     if (homeScore > awayScore)
     {
         //home wins!
-        self.homeView.backgroundColor = [UIColor colorWithRed:128/255.0 green:64/255.0 blue:32/255.0 alpha:0.5];
+        self.homeView.backgroundColor = [UIColor colorWithRed:255/255.0 green:0255/255.0 blue:0255/255.0 alpha:0.16];
         self.gameResultLabel.text = [NSString stringWithFormat:@"#%@ won this game!", self.homeTeamID];
+        self.winnerID = self.homeTeamID;
     }
     else
     {
         //it's a tie!
         self.gameResultLabel.text = @"This game was a tie!";
+        self.winnerID = @"tie";
     }
 }
 

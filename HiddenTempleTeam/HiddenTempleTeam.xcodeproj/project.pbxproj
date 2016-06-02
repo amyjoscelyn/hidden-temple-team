@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D3072411D00C18C000ECC0F /* CAGradientLayer+Gradients.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3072401D00C18C000ECC0F /* CAGradientLayer+Gradients.m */; };
 		3D4F622B1CFE1DE100E289CB /* AMYPlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4F622A1CFE1DE100E289CB /* AMYPlayerDetailViewController.m */; };
 		3D4F622E1CFF1DED00E289CB /* AMYTeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4F622D1CFF1DED00E289CB /* AMYTeamsTableViewController.m */; };
 		3D4F62311CFF2B6200E289CB /* AMYTeamDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4F62301CFF2B6200E289CB /* AMYTeamDetailViewController.m */; };
@@ -54,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		31C32918F0E6CC76BBC68A40 /* Pods-HiddenTempleTeam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiddenTempleTeam.release.xcconfig"; path = "Pods/Target Support Files/Pods-HiddenTempleTeam/Pods-HiddenTempleTeam.release.xcconfig"; sourceTree = "<group>"; };
+		3D30723F1D00C18C000ECC0F /* CAGradientLayer+Gradients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAGradientLayer+Gradients.h"; sourceTree = "<group>"; };
+		3D3072401D00C18C000ECC0F /* CAGradientLayer+Gradients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAGradientLayer+Gradients.m"; sourceTree = "<group>"; };
 		3D4F62291CFE1DE100E289CB /* AMYPlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYPlayerDetailViewController.h; sourceTree = "<group>"; };
 		3D4F622A1CFE1DE100E289CB /* AMYPlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMYPlayerDetailViewController.m; sourceTree = "<group>"; };
 		3D4F622C1CFF1DED00E289CB /* AMYTeamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMYTeamsTableViewController.h; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				3D6A32421CF888EF00659EFF /* AMYSharedDataStore.m */,
 				3DDAEB891CF7837F00E39AF5 /* AMYLocalHostAPIClient.h */,
 				3DDAEB8A1CF7837F00E39AF5 /* AMYLocalHostAPIClient.m */,
+				3D30723F1D00C18C000ECC0F /* CAGradientLayer+Gradients.h */,
+				3D3072401D00C18C000ECC0F /* CAGradientLayer+Gradients.m */,
 				3DDAEB591CF781A200E39AF5 /* ViewController.h */,
 				3DDAEB5A1CF781A200E39AF5 /* ViewController.m */,
 				3D9C67E91CF7C5270041AA0A /* AMYPlayersTableViewController.h */,
@@ -454,6 +459,7 @@
 				3D6A323D1CF8880500659EFF /* Player+CoreDataProperties.m in Sources */,
 				3D6A32391CF8880500659EFF /* Team+CoreDataProperties.m in Sources */,
 				3DDAEB8B1CF7837F00E39AF5 /* AMYLocalHostAPIClient.m in Sources */,
+				3D3072411D00C18C000ECC0F /* CAGradientLayer+Gradients.m in Sources */,
 				3DDAEB611CF781A200E39AF5 /* HiddenTempleTeam.xcdatamodeld in Sources */,
 				3D6A323F1CF8880500659EFF /* Roster+CoreDataProperties.m in Sources */,
 				3D4F622E1CFF1DED00E289CB /* AMYTeamsTableViewController.m in Sources */,

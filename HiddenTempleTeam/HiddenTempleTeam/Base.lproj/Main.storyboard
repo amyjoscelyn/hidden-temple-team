@@ -451,6 +451,12 @@
                                     <constraint firstAttribute="width" secondItem="UhJ-kz-blH" secondAttribute="height" multiplier="1:1" id="S5w-ca-xQQ"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RnD-OE-9rf">
+                                <rect key="frame" x="225" y="304" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RnD-OE-9rf" secondAttribute="height" multiplier="1:1" id="6W5-HI-CaW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -461,15 +467,18 @@
                             <constraint firstItem="lu7-EA-kNd" firstAttribute="centerX" secondItem="hoh-WX-h46" secondAttribute="centerX" id="Dur-Tp-tCr"/>
                             <constraint firstItem="UhJ-kz-blH" firstAttribute="centerX" secondItem="Ja7-ja-jG3" secondAttribute="centerX" id="Ftp-Rw-eAG"/>
                             <constraint firstItem="Ja7-ja-jG3" firstAttribute="top" secondItem="UhJ-kz-blH" secondAttribute="bottom" constant="16" id="Ga1-tj-sQ5"/>
+                            <constraint firstItem="RnD-OE-9rf" firstAttribute="centerX" secondItem="hoh-WX-h46" secondAttribute="centerX" id="HZn-0q-vhZ"/>
                             <constraint firstItem="9jF-wO-v94" firstAttribute="centerX" secondItem="hoh-WX-h46" secondAttribute="centerX" id="Kk6-DN-hU1"/>
                             <constraint firstItem="X29-47-IeV" firstAttribute="centerX" secondItem="hoh-WX-h46" secondAttribute="centerX" id="LD1-tB-ldy"/>
                             <constraint firstItem="p1R-fP-mNb" firstAttribute="top" secondItem="9jF-wO-v94" secondAttribute="bottom" constant="54" id="TWG-mF-UsJ"/>
                             <constraint firstItem="nZT-qK-boU" firstAttribute="height" secondItem="Rdv-tW-UlL" secondAttribute="height" id="VNC-Td-47o"/>
+                            <constraint firstItem="9jF-wO-v94" firstAttribute="top" secondItem="RnD-OE-9rf" secondAttribute="bottom" constant="16" id="VQ7-8D-5mW"/>
                             <constraint firstItem="b6a-97-u7E" firstAttribute="centerX" secondItem="gaY-08-P27" secondAttribute="centerX" id="ZG2-FI-0I6"/>
                             <constraint firstItem="nZT-qK-boU" firstAttribute="leading" secondItem="fdb-d2-mM2" secondAttribute="leading" id="Zl5-b0-AGz"/>
                             <constraint firstItem="b6a-97-u7E" firstAttribute="width" secondItem="hoh-WX-h46" secondAttribute="width" multiplier="1/4" id="boc-Pv-KZy"/>
                             <constraint firstItem="X29-47-IeV" firstAttribute="top" secondItem="RMK-3D-OUW" secondAttribute="bottom" constant="16" id="dyL-PW-FnQ"/>
                             <constraint firstItem="nZT-qK-boU" firstAttribute="bottom" secondItem="jlw-3V-HSO" secondAttribute="bottom" id="jms-AD-6Kz"/>
+                            <constraint firstItem="RnD-OE-9rf" firstAttribute="width" secondItem="hoh-WX-h46" secondAttribute="width" multiplier="1/4" id="mb8-Dm-kTe"/>
                             <constraint firstItem="lu7-EA-kNd" firstAttribute="height" secondItem="fdb-d2-mM2" secondAttribute="height" id="rR9-Cc-Z7k"/>
                             <constraint firstItem="lu7-EA-kNd" firstAttribute="bottom" secondItem="fdb-d2-mM2" secondAttribute="bottom" id="tVg-nG-3sB"/>
                             <constraint firstItem="nZT-qK-boU" firstAttribute="trailing" secondItem="Rdv-tW-UlL" secondAttribute="trailing" id="uQs-91-dzC"/>
@@ -489,6 +498,7 @@
                         <outlet property="homeTeamScoreLabel" destination="fdb-d2-mM2" id="y0j-3t-5wX"/>
                         <outlet property="homeView" destination="zoQ-R5-xZE" id="LB9-KC-D0D"/>
                         <outlet property="scoreView" destination="nZT-qK-boU" id="B6Q-mB-FUM"/>
+                        <outlet property="winningTeamImageView" destination="RnD-OE-9rf" id="Pvm-6X-mGs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fE-Ta-iMf" userLabel="First Responder" sceneMemberID="firstResponder"/>

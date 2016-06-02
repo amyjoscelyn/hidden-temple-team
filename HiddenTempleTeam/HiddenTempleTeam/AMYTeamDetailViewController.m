@@ -7,6 +7,7 @@
 //
 
 #import "AMYTeamDetailViewController.h"
+#import "CAGradientLayer+Gradients.h"
 
 @interface AMYTeamDetailViewController ()
 
@@ -41,19 +42,9 @@
 
 - (void)setBackgroundColor
 {
-    self.gradientLayer = [CAGradientLayer layer];
+    self.gradientLayer = [CAGradientLayer yellowToBrownGradient];
     self.gradientLayer.frame = self.view.frame;
     [self.view.layer insertSublayer:self.gradientLayer atIndex:0];
-    
-    UIColor *firstColor = [UIColor colorWithRed:254/256.0 green:253/256.0 blue:56/256.0 alpha:1.0];
-    UIColor *secondColor = [UIColor colorWithRed:176/256.0 green:123/256.0 blue:23/256.0 alpha:1.0];
-    UIColor *thirdColor = [UIColor colorWithRed:117/256.0 green:80/256.0 blue:25/256.0 alpha:1.0];
-    UIColor *fourthColor = [UIColor colorWithRed:68/256.0 green:49/256.0 blue:16/256.0 alpha:1.0];
-    
-    NSArray *colorsArray = @[(id)firstColor.CGColor, (id)secondColor.CGColor, (id)thirdColor.CGColor, (id)fourthColor.CGColor];
-    self.gradientLayer.colors = colorsArray;
-    self.gradientLayer.locations = @[@0.0, @0.35, @0.68, @0.95];
-    //there should be a location for every color in the array
 }
 
 - (void)displayTeamImage
