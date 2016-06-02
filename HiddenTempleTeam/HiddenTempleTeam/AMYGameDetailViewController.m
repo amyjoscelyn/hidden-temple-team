@@ -36,18 +36,12 @@
 {
     [super viewDidLoad];
     
-    /*
-     =======================================================
-           THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
-     =======================================================
-     */
-    
-    self.gameDate = self.game[@"game_date"];
-    self.gameID = self.game[@"game_id"];
-    self.homeTeamID = self.game[@"home_team"];
-    self.awayTeamID = self.game[@"away_team"];
-    self.homeTeamScore = self.game[@"home_score"];
-    self.awayTeamScore = self.game[@"away_score"];
+    self.gameDate = self.game[@"gameDate"];
+    self.gameID = self.game[@"gameID"];
+    self.homeTeamID = self.game[@"homeTeam"];
+    self.awayTeamID = self.game[@"awayTeam"];
+    self.homeTeamScore = self.game[@"homeTeamScore"];
+    self.awayTeamScore = self.game[@"awayTeamScore"];
     
     self.gameHeaderLabel.text = [NSString stringWithFormat:@"Game #%@, %@", self.gameID, self.gameDate];
     self.homeTeamNameLabel.text = [NSString stringWithFormat:@"team #%@", self.homeTeamID];
@@ -79,15 +73,13 @@
     if (homeScore > awayScore)
     {
         //home wins!
-        
         self.homeView.backgroundColor = [UIColor purpleColor];
         
         self.gameResultLabel.text = [NSString stringWithFormat:@"#%@ won this game!", self.homeTeamID];
     }
-    else //RIGHT NOW away always wins because there are no scores
+    else
     {
         //away wins!
-        
         self.awayView.backgroundColor = [UIColor purpleColor];
         
         self.gameResultLabel.text = [NSString stringWithFormat:@"#%@ won this game!", self.awayTeamID];

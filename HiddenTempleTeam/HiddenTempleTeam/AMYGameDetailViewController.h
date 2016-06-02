@@ -10,13 +10,6 @@
 
 @interface AMYGameDetailViewController : UIViewController
 
-@property (nonatomic) NSInteger tempID;
-
-/*
- =======================================================
-       THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
- =======================================================
- */
 @property (nonatomic, strong) NSDictionary *game;
 
 @end

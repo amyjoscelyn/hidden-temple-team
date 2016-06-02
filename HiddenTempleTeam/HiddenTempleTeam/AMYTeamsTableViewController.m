@@ -22,11 +22,6 @@
 
 - (void)viewDidLoad
 {
-    /*
-     =======================================================
-           THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
-     =======================================================
-     */
     [super viewDidLoad];
     
     self.dataStore = [AMYSharedDataStore sharedStoryDataStore];
@@ -48,8 +43,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
-    //    return self.teams.count;
+        return self.teams.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -59,12 +53,6 @@
     NSInteger row = indexPath.row;
     cell.textLabel.text = [NSString stringWithFormat:@"team # %li", row];
     
-    /*
-     =======================================================
-           THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
-     =======================================================
-     *-/
-    
     NSDictionary *team = self.teams[row];
     
     NSString *teamID = team[@"teamID"];
@@ -73,16 +61,9 @@
     cell.textLabel.text = teamName;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"#%@", teamID];
     
-    */
-    
     return cell;
 }
 
-/*
- =======================================================
-       THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
- =======================================================
- */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     AMYTeamDetailViewController *teamDestinationVC = segue.destinationViewController;
@@ -91,9 +72,6 @@
     NSInteger row = indexPath.row;
     
     teamDestinationVC.team = self.teams[row];
-    
-    //temp!!!!!!!!!!!
-    teamDestinationVC.tempID = row;
 }
 
 @end

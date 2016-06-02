@@ -24,13 +24,6 @@
 {
     [super viewDidLoad];
     
-    /*
-     =======================================================
-           THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
-     =======================================================
-     */
-    [super viewDidLoad];
-    
     self.dataStore = [AMYSharedDataStore sharedStoryDataStore];
     
     [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:@"games/all" completion:^(NSArray *games)
@@ -48,8 +41,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
-    //    return self.games.count;
+        return self.games.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -59,31 +51,18 @@
     NSInteger row = indexPath.row;
     cell.textLabel.text = [NSString stringWithFormat:@"team # %li", row];
     
-    /*
-     =======================================================
-           THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
-     =======================================================
-     *-/
-    
     NSDictionary *game = self.games[row];
     
-    NSString *gameID = game[@"id"];
-    NSString *homeTeam = game[@"id"];
-    NSString *awayTeam = game[@"id"];
+    NSString *gameID = game[@"gameID"];
+    NSString *homeTeam = game[@"homeTeam"];
+    NSString *awayTeam = game[@"awayTeam"];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ vs. %@", homeTeam, awayTeam];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", gameID];
     
-    */
-    
     return cell;
 }
 
-/*
- =======================================================
-       THIS HAS NOT YET BEEN TESTED WITH LIVE DATA
- =======================================================
- */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     AMYGameDetailViewController *gameDestinationVC = segue.destinationViewController;
@@ -92,9 +71,6 @@
     NSInteger row = indexPath.row;
     
     gameDestinationVC.game = self.games[row];
-    
-    //temp!!!!!!!!!!!
-    gameDestinationVC.tempID = row;
 }
 
 @end
