@@ -32,10 +32,10 @@
     self.lastName = self.player[@"lastName"];
     self.playerID = self.player[@"playerID"];
     
-    NSInteger timeInSeconds = dateString.integerValue;
+    NSTimeInterval timeInSeconds = dateString.integerValue / 1000;
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInSeconds];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd:MM:yy"];
+    [formatter setDateFormat:@"MM/dd/yyyy"];
     
     self.birthdate = [formatter stringFromDate:date];
     

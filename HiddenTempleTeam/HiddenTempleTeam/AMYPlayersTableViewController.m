@@ -33,7 +33,7 @@
          
          self.players = [players mutableCopy];
          [self.tableView reloadData];
-         NSLog(@"players: %@", self.players);
+//         NSLog(@"players: %@", self.players);
      }];
 }
 

@@ -30,7 +30,7 @@
      {         
          self.teams = [teams mutableCopy];
          [self.tableView reloadData];
-         NSLog(@"teams: %@", self.teams);
+//         NSLog(@"teams: %@", self.teams);
      }];
 }
 
