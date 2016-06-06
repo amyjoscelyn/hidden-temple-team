@@ -52,6 +52,9 @@
     self.playerIDLabel.text = [NSString stringWithFormat:@"#%@", self.playerID];
     self.birthdateLabel.text = [NSString stringWithFormat:@"born: %@", self.birthdate];
     
+    NSSortDescriptor *sortByDateDesc = [NSSortDescriptor sortDescriptorWithKey:@"hireDate" ascending:NO];
+    self.teamRosters = [self.teamRosters sortedArrayUsingDescriptors:@[sortByDateDesc]];
+    
     [self setBackgroundColor];
 }
 
