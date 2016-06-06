@@ -536,7 +536,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uaq-4n-ihy">
-                                <rect key="frame" x="100" y="235" width="400" height="300"/>
+                                <rect key="frame" x="100" y="335" width="400" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamCell" textLabel="MAO-2b-sbp" detailTextLabel="h4l-dA-SjF" style="IBUITableViewCellStyleValue1" id="WFc-Ky-WXX">
@@ -565,16 +565,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LotHT Legend" translatesAutoresizingMaskIntoConstraints="NO" id="UM5-Wp-x4r">
+                                <rect key="frame" x="200" y="111" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UM5-Wp-x4r" secondAttribute="height" multiplier="1:1" id="78e-kE-OY2"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ka0-jV-9xi" firstAttribute="centerX" secondItem="jab-Fl-bYa" secondAttribute="centerX" id="1oj-h2-tcb"/>
-                            <constraint firstItem="uaq-4n-ihy" firstAttribute="height" secondItem="jab-Fl-bYa" secondAttribute="height" multiplier="1/2" id="6T0-T6-af2"/>
+                            <constraint firstItem="uaq-4n-ihy" firstAttribute="top" secondItem="UM5-Wp-x4r" secondAttribute="bottom" constant="24" id="4XK-nu-VVN"/>
+                            <constraint firstItem="uaq-4n-ihy" firstAttribute="height" secondItem="jab-Fl-bYa" secondAttribute="height" multiplier="1/3" id="6T0-T6-af2"/>
                             <constraint firstItem="JUD-5C-dQJ" firstAttribute="top" secondItem="v5j-Uo-VhO" secondAttribute="bottom" constant="16" id="9Ez-VI-A1o"/>
                             <constraint firstItem="uaq-4n-ihy" firstAttribute="centerX" secondItem="jab-Fl-bYa" secondAttribute="centerX" id="9U7-h2-1SB"/>
                             <constraint firstItem="uaq-4n-ihy" firstAttribute="width" secondItem="jab-Fl-bYa" secondAttribute="width" multiplier="2/3" id="CZR-03-cHt"/>
                             <constraint firstItem="B7g-nn-PV6" firstAttribute="top" secondItem="uaq-4n-ihy" secondAttribute="bottom" constant="16" id="Iw4-eI-NZl"/>
                             <constraint firstItem="v5j-Uo-VhO" firstAttribute="top" secondItem="ka0-jV-9xi" secondAttribute="bottom" constant="16" id="SMz-Uk-DD1"/>
+                            <constraint firstItem="UM5-Wp-x4r" firstAttribute="width" secondItem="jab-Fl-bYa" secondAttribute="width" multiplier="1/3" id="T77-Ql-PSl"/>
+                            <constraint firstItem="UM5-Wp-x4r" firstAttribute="centerX" secondItem="jab-Fl-bYa" secondAttribute="centerX" id="WrL-yS-RsF"/>
                             <constraint firstItem="v5j-Uo-VhO" firstAttribute="centerX" secondItem="ka0-jV-9xi" secondAttribute="centerX" id="aR1-ew-5SF"/>
                             <constraint firstItem="ka0-jV-9xi" firstAttribute="top" secondItem="bgP-pY-JNl" secondAttribute="bottom" constant="70" id="dEO-LP-Bue"/>
                             <constraint firstItem="JUD-5C-dQJ" firstAttribute="centerX" secondItem="v5j-Uo-VhO" secondAttribute="centerX" id="ehE-nF-bdm"/>
@@ -649,4 +658,7 @@
             <point key="canvasLocation" x="243" y="312"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LotHT Legend" width="500" height="500"/>
+    </resources>
 </document>

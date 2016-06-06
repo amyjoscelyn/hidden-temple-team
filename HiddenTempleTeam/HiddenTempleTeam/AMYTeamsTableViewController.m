@@ -27,10 +27,11 @@
     self.dataStore = [AMYSharedDataStore sharedStoryDataStore];
     
     [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:@"teams/all" completion:^(NSArray *teams)
-     {         
-         self.teams = [teams mutableCopy];
+     {
+         NSSortDescriptor *sortByIDAsc = [NSSortDescriptor sortDescriptorWithKey:@"teamID" ascending:YES];
+         NSArray *sortedTeams = [teams sortedArrayUsingDescriptors:@[sortByIDAsc]];
+         self.teams = [sortedTeams mutableCopy];
          [self.tableView reloadData];
-//         NSLog(@"teams: %@", self.teams);
      }];
 }
 

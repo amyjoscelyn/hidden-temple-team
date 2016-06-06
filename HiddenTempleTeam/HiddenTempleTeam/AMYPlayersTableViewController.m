@@ -28,12 +28,12 @@
     
     [AMYLocalHostAPIClient getInfoFromRepositoryWithQuery:@"players/all" completion:^(NSArray *players)
      {
-         //        NSSortDescriptor *sortByIDAsc = [NSSortDescriptor sortDescriptorWithKey:@"playerID" ascending:YES];
-         //        NSArray *sortedPlayers = [players sortedArrayUsingSelector:sortByIDAsc];
+         NSSortDescriptor *sortByIDAsc = [NSSortDescriptor sortDescriptorWithKey:@"playerID" ascending:YES];
+         NSArray *sortedPlayers = [players sortedArrayUsingDescriptors:@[sortByIDAsc]];
          
-         self.players = [players mutableCopy];
+         self.players = [sortedPlayers mutableCopy];
          [self.tableView reloadData];
-//         NSLog(@"players: %@", self.players);
+         //         NSLog(@"players: %@", self.players);
      }];
 }
 
