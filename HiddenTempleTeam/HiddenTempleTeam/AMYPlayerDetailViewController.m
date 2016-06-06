@@ -7,6 +7,7 @@
 //
 
 #import "AMYPlayerDetailViewController.h"
+#import "CAGradientLayer+Gradients.h"
 
 @interface AMYPlayerDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -15,6 +16,8 @@
 @property (nonatomic, strong) NSString *birthdate;
 @property (nonatomic, strong) NSString *playerID;
 @property (nonatomic, strong) NSArray *teamRosters;
+
+@property (nonatomic, strong) CAGradientLayer *gradientLayer;
 
 @property (weak, nonatomic) IBOutlet UILabel *playerNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playerIDLabel;
@@ -48,6 +51,17 @@
     self.playerNameLabel.text = [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
     self.playerIDLabel.text = [NSString stringWithFormat:@"#%@", self.playerID];
     self.birthdateLabel.text = [NSString stringWithFormat:@"born: %@", self.birthdate];
+    
+    [self setBackgroundColor];
+}
+
+- (void)setBackgroundColor
+{
+    self.gradientLayer = [CAGradientLayer yellowToBrownGradient];
+    self.gradientLayer.frame = self.view.frame;
+    [self.view.layer insertSublayer:self.gradientLayer atIndex:0];
+    
+//    self.tableView.backgroundColor = [UIColor brownColor];
 }
 
 #pragma mark - Table view data source

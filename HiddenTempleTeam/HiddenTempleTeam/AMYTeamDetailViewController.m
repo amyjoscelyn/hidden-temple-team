@@ -9,15 +9,17 @@
 #import "AMYTeamDetailViewController.h"
 #import "CAGradientLayer+Gradients.h"
 
-@interface AMYTeamDetailViewController ()
+@interface AMYTeamDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSString *teamName;
 @property (nonatomic, strong) NSString *teamID;
+@property (nonatomic, strong) NSArray *teamRosters;
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;
 
 @property (weak, nonatomic) IBOutlet UILabel *teamNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *teamIDLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *teamImage;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -27,11 +29,20 @@
 {
     [super viewDidLoad];
     
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    
+    NSLog(@"team: %@", self.team);
+    
     self.teamName = self.team[@"teamName"];
     self.teamID = self.team[@"teamID"];
+    self.teamRosters = self.team[@"teamRosters"];
     
     self.teamNameLabel.text = [NSString stringWithFormat:@"%@", self.teamName];
     self.teamIDLabel.text = [NSString stringWithFormat:@"team #%@", self.teamID];
+    
+    NSSortDescriptor *sortByDateDesc = [NSSortDescriptor sortDescriptorWithKey:@"hireDate" ascending:NO];
+    self.teamRosters = [self.teamRosters sortedArrayUsingDescriptors:@[sortByDateDesc]];
     
     [self displayTeamImage];
     self.teamImage.layer.borderWidth = 2;
@@ -98,4 +109,57 @@
     //*****Images from Nickelodeon Wiki for 'Legends of the Hidden Temple' ( http://nickelodeon.wikia.com/wiki/Legends_of_the_Hidden_Temple )*********************
 }
 
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.teamRosters.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"playerCell" forIndexPath:indexPath];
+    
+    NSInteger row = indexPath.row;
+    
+    NSDictionary *player = self.teamRosters[row];
+    
+    NSString *hireDateString = player[@"hireDate"];
+    NSString *firstName = player[@"player"][@"firstName"];
+    NSString *lastName = player[@"player"][@"lastName"];
+//    NSString *playerID = player[@"player"][@"playerID"];
+    
+    NSString *fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+    
+    NSTimeInterval timeInSeconds = hireDateString.integerValue / 1000;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInSeconds];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd/yyyy"];
+    
+    NSString *dateString = [formatter stringFromDate:date];
+    
+    cell.textLabel.text = fullName;
+    cell.detailTextLabel.text = dateString;
+    
+    return cell;
+}
+
+#pragma mark - Navigation
+
+/*
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ //    AMYPlayerDetailViewController *playerDestinationVC = segue.destinationViewController;
+ 
+ NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+ NSInteger row = indexPath.row;
+ 
+ //    playerDestinationVC.player = self.players[row];
+ }
+ */
 @end
